@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/index.css">
+  <style>
+    button{
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body class="bg-[var(--bg-color)] w-full">
+  <div class="max-w-[400px] mx-auto relative mt-28">
+
+    <!-- Sticker background -->
+    <div
+      class="absolute top-2 right-3 w-full h-[540px] bg-[var(--mulberry-color)] rounded-3xl border border-[var(--charcoal-color)] shadow-lg -z-10">
+    </div>
+
+    <!-- Calculator box -->
+    <div class="bg-[var(--pale-color)] h-[537px] p-6 rounded-3xl border border-[var(--charcoal-color)] shadow-lg">
+      <!-- Screen box -->
+      <div class="bg-[var(--white-color)] rounded-xl py-13 shadow-md text-black" id="Screen">
+
+      </div>
+      <!-- numbers-->
+      <section>
+        <div class=" mt-7">
+          <div class="grid grid-cols-4">
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] ">ON</button>
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-md text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "><i
+                class="fa-solid fa-divide"></i></button>
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "><i
+                class="fa-solid fa-square-root-variable"></i></button>
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] ">OFF</button>
+          </div>
+          <div class="grid grid-cols-3 gap-4 mt-4">
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] " onclick="display(1)">1</button>
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">
+              2</button>
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">-
+            </button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">3</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">4</button>
+            <div
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">
+              X</div>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">5</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">6</button>
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">=</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">7</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">8</button>
+            <button
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-30 w-20 rounded-xl border border-[var(--charcoal-color)] row-span-2 h-full ">+</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">9</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">0</button>
+          </div>
+          <div class="grid grid-cols-3 mt-4">
+             <button
+              class="bg-[var(--white-color)] text-black text-xl text-center h-10 w-20 rounded-xl font-bold border border-[var(--charcoal-color)] ">.</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl font-bold border border-[var(--charcoal-color)] ">♡</button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="calculator.js"></script>
+</body>
+
+
+</html>
