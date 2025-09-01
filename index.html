@@ -11,7 +11,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="/index.css">
   <style>
-    button{
+    button {
       cursor: pointer;
     }
   </style>
@@ -28,7 +28,9 @@
     <!-- Calculator box -->
     <div class="bg-[var(--pale-color)] h-[537px] p-6 rounded-3xl border border-[var(--charcoal-color)] shadow-lg">
       <!-- Screen box -->
-      <div class="bg-[var(--white-color)] rounded-xl py-13 shadow-md text-black" id="Screen">
+      <div
+        class="bg-[var(--white-color)] rounded-xl h-24 pt-[60px] pb-[10px] shadow-md text-xl text-black text-right pr-[20px] overflow-hidden"
+        id="screen">
 
       </div>
       <!-- numbers-->
@@ -36,54 +38,72 @@
         <div class=" mt-7">
           <div class="grid grid-cols-4">
             <button
-              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] ">ON</button>
+              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="openCalculator()">ON</button>
             <button
-              class="bg-[var(--mulberry-color)] text-white text-md text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "><i
-                class="fa-solid fa-divide"></i></button>
+              class="bg-[var(--mulberry-color)] text-white text-md text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display('/')"><i class="fa-solid fa-divide"></i></button>
             <button
-              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "><i
-                class="fa-solid fa-square-root-variable"></i></button>
+              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display()"><i class="fa-solid fa-square-root-variable"></i></button>
             <button
-              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] ">OFF</button>
+              class="bg-[var(--mulberry-color)] text-white text-sm text-center h-8 w-17 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="offCalculator()">OFF</button>
           </div>
           <div class="grid grid-cols-3 gap-4 mt-4">
             <button
-              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] " onclick="display(1)">1</button>
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(1)">1</button>
             <button
-              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(2)">
               2</button>
             <button
-              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">-
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display('-')">-
             </button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">3</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(3)">3</button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">4</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(4)">4</button>
             <div
-              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display('*')">
               X</div>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">5</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(5)">5</button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">6</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(6)">6</button>
             <button
-              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">=</button>
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)]"
+              onclick="calculate()">=</button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">7</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(7)">7</button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">8</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(8)">8</button>
             <button
-              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-30 w-20 rounded-xl border border-[var(--charcoal-color)] row-span-2 h-full ">+</button>
+              class="bg-[var(--mulberry-color)] text-white text-2xl text-center h-30 w-20 rounded-xl border border-[var(--charcoal-color)] row-span-2 h-full "
+              onclick="display('+')">+</button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">9</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(9)">9</button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] ">0</button>
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl border border-[var(--charcoal-color)] "
+              onclick="display(0)">0</button>
           </div>
           <div class="grid grid-cols-3 mt-4">
-             <button
-              class="bg-[var(--white-color)] text-black text-xl text-center h-10 w-20 rounded-xl font-bold border border-[var(--charcoal-color)] ">.</button>
             <button
-              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl font-bold border border-[var(--charcoal-color)] ">♡</button>
+              class="bg-[var(--white-color)] text-black text-xl text-center h-10 w-20 rounded-xl font-bold border border-[var(--charcoal-color)] "
+              onclick="display('.')">.</button>
+            <button
+              class="bg-[var(--white-color)] text-black text-2xl text-center h-10 w-20 rounded-xl font-bold border border-[var(--charcoal-color)] "
+              onclick="clearscreen()">♡</button>
           </div>
         </div>
       </section>
